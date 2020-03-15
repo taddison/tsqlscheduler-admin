@@ -1,0 +1,13 @@
+{
+  "TaskUid": "0b9eae6b-0ae6-4c3c-ab0e-ab9361cc09bb",
+  "Identifier": "DBadmin-AdminStuff",
+  "TSQLCommand": "exec DBAdmin.dbo.DoAdminStuff;",
+  "StartTime": "00:00:00",
+  "Frequency": "Hour",
+  "FrequencyInterval": 1,
+  "NotifyOnFailureOperator": "Test Operator",
+  "IsNotifyOnfailure": false,
+  "IsEnabled": true,
+  "IsDeleted": false,
+  "NotifyLevelEventLog": "OnFailure"
+}

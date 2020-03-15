@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  web:
+    container_name: tsqladmin-web
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./web:/app"
+      - "/app/node_modules"
+    environment:
+      - NODE_ENV=development
+    depends_on: 
+      - api
+  api:
+    container_name: tsqladmin-api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    volumes:
+      - "./api:/app"
+      - "/app/node_modules"
+    environment:
+      - NODE_ENV=development
