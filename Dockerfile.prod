@@ -1,0 +1,33 @@
+##
+## Build image
+##
+
+FROM node:alpine as builder
+
+WORKDIR /app
+
+COPY /web/package.json /app/package.json
+
+RUN yarn install
+
+COPY /web /app
+
+RUN yarn build
+
+##
+## Run image
+##
+
+FROM node:alpine
+
+WORKDIR /app
+
+COPY /api/package.json /app/package.json
+
+RUN yarn install
+
+COPY /api /app
+
+COPY --from=builder /app/build /app/public
+
+CMD ["node", "src/index.js"]
