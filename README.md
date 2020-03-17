@@ -7,8 +7,10 @@ Manage local tasks with a UI.  Designed to be used locally (per-dev/DBA) and int
 In development the `/api/sample-tasks` folder will be copied into the container, and mounted under `/tasks`.
 
 ```bash
-docker-compose up --build
+docker-compose up --build --renew-anon-volumes
 ```
+
+> `renew-anon-volumes` stops docker from reusing our old anonymous `node_modules` volume, which is important for picking up new dependencies.
 
 # Prod
 
