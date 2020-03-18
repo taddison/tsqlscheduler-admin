@@ -10,7 +10,7 @@
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0"
   },
-  "proxy": "http://tsqladmin-web:8881",
+  "proxy": "http://tsqladmin-api:8881",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
