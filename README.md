@@ -10,13 +10,8 @@ In development the `/api/sample-tasks` folder will be copied into the container,
 docker-compose up --build --renew-anon-volumes
 ```
 
-> `renew-anon-volumes` stops docker from reusing our old anonymous `node_modules` volume, which is important for picking up new dependencies.
+> `--renew-anon-volumes` stops docker from reusing our old anonymous `node_modules` volume, which is important for picking up new dependencies.
 
 # Prod
 
 Build and run the production image (`Dockerfile.prod`) and mount the folder which contains tasks under `/tasks`.
-
-# To Do
-
-- [ ] Add express, expose port
-- [ ] Wire web -> api
