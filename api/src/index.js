@@ -3,7 +3,7 @@ const fs = require("fs").promises;
 
 const app = express();
 
-app.get("/tasks", async (req, res, next) => {
+app.get("/api/tasks", async (req, res, next) => {
   const files = await fs.readdir("/tasks");
   res.status(200).json(files);
 });
